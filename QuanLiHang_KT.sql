@@ -66,12 +66,12 @@ RETURN
         HX.DONGIA,
         HX.SLBAN,  
         CASE
-            WHEN WEEKDAY(HD.NGAYXUAT) = 0 THEN N'Thứ hai'            
-            WHEN WEEKDAY(HD.NGAYXUAT) = 1 THEN N'Thứ ba'
-            WHEN WEEKDAY(HD.NGAYXUAT) = 2 THEN N'Thứ tư'
-            WHEN WEEKDAY(HD.NGAYXUAT) = 3 THEN N'Thứ năm'
-            WHEN WEEKDAY(HD.NGAYXUAT) = 4 THEN N'Thứ sáu'
-            WHEN WEEKDAY(HD.NGAYXUAT) = 5 THEN N'Thứ bảy'
+            WHEN DATEPART(WEEKDAY, HD.NGAYXUAT) = 0 THEN N'Thứ hai'            
+            WHEN DATEPART(WEEKDAY, HD.NGAYXUAT) = 1 THEN N'Thứ ba'
+            WHEN DATEPART(WEEKDAY, HD.NGAYXUAT) = 2 THEN N'Thứ tư'
+            WHEN DATEPART(WEEKDAY, HD.NGAYXUAT) = 3 THEN N'Thứ năm'
+            WHEN DATEPART(WEEKDAY, HD.NGAYXUAT) = 4 THEN N'Thứ sáu'
+            WHEN DATEPART(WEEKDAY, HD.NGAYXUAT) = 5 THEN N'Thứ bảy'
             ELSE N'Chủ nhật'
         END AS NGAYTHU
     FROM HANGXUAT HX
